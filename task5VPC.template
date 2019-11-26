@@ -271,7 +271,7 @@
 		"Type": "AWS::AutoScaling::AutoScalingGroup",
 		"DependsOn": "BastionLaunchConfiguration",
 		"Properties": {
-			"AvailabilityZones":{"Fn::GetAZs":""},
+			"AvailabilityZones":{"Fn::Select" : ["0", {"Fn::GetAZs" : ""}]},
 			"LaunchConfigurationName": {"Ref": "BastionLaunchConfiguration"},
 			"VPCZoneIdentifier": [{"Ref": "PublicSubnetEuCentral1a"}],
 			"MinSize": 1,
