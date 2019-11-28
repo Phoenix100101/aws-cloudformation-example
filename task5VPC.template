@@ -263,7 +263,7 @@
 			"AssociatePublicIpAddress": true,
 			"InstanceType": "t2.micro",
 			"KeyName": "daniil-keypair",
-			"ImageId": "ami-040cf9dcede9f064a",
+			"ImageId": "ami-00da8f0d575a64691",
 			"SecurityGroups": [{
 				"Ref": "SecurityGroupForBastion"
 			}]
