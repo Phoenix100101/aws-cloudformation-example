@@ -1,8 +1,57 @@
 {
-  "AWSTemplateFormatVersion" : "2010-09-09",
+   "AWSTemplateFormatVersion" : "2010-09-09",
 
-  "Description" : "",
-
-  "Resources" : {
-  }
+   "Description" : "daniil-cloudformation-task5",
+   "Resources" : {
+    "PublicInstance1b": {
+      "Type" : "AWS::EC2::Instance",
+      "Properties": {
+        "KeyName" : "daniil-keypair",
+        "ImageId": "ami-040cf9dcede9f064a",
+        "InstanceType": "t2.micro",
+        "SubnetId": { "Ref": "PublicSubnetEuCentral1b"},
+        "Tags": [{"Key": "Name", "Value": "daniil-instance-public-subnet-eu-central-1b-cloudformation"}]
+      }
+    },
+    "PrivateInstance1a": {
+      "Type" : "AWS::EC2::Instance",
+      "Properties": {
+        "KeyName" : "daniil-keypair",
+        "ImageId": "ami-040cf9dcede9f064a",
+        "InstanceType": "t2.micro",
+        "SubnetId": { "Ref": "PrivateSubnetEuCentral1a"},
+        "Tags": [{"Key": "Name", "Value": "daniil-instance-private-subnet-eu-central-1a-cloudformation"}]
+      }
+    },
+    "PrivateInstance1b": {
+      "Type" : "AWS::EC2::Instance",
+      "Properties": {
+        "KeyName" : "daniil-keypair",
+        "ImageId": "ami-040cf9dcede9f064a",
+        "InstanceType": "t2.micro",
+        "SubnetId": { "Ref": "PrivateSubnetEuCentral1b"},
+        "Tags": [{"Key": "Name", "Value": "daniil-instance-private-subnet-eu-central-1b-cloudformation"}]
+      }
+    },
+    "DBInstance1a": {
+      "Type" : "AWS::EC2::Instance",
+      "Properties": {
+        "KeyName" : "daniil-keypair",
+        "ImageId": "ami-040cf9dcede9f064a",
+        "InstanceType": "t2.micro",
+        "SubnetId": { "Ref": "DBSubnetEuCentral1a"},
+        "Tags": [{"Key": "Name", "Value": "daniil-instance-db-subnet-eu-central-1a-cloudformation"}]
+      }
+    },
+    "DBInstance1b": {
+      "Type" : "AWS::EC2::Instance",
+      "Properties": {
+        "KeyName" : "daniil-keypair",
+        "ImageId": "ami-040cf9dcede9f064a",
+        "InstanceType": "t2.micro",
+        "SubnetId": { "Ref": "DBSubnetEuCentral1b"},
+        "Tags": [{"Key": "Name", "Value": "daniil-instance-db-subnet-eu-central-1b-cloudformation"}]
+      }
+    }
+   }
 }

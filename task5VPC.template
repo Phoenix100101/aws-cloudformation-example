@@ -42,7 +42,7 @@
 		"Type": "AWS::EC2::EIP",
 		"Properties": {
 			"Domain": "vpc",
-			"Tags": [{"Key": "Name", "Value": "daniil-elasticIp-1a-cloudformation"}]
+			"Tags": [{"Key": "Name", "Value": "daniil-elasticIp-1b-cloudformation"}]
 		}
 	},
 	
@@ -260,7 +260,9 @@
 	"BastionLaunchConfiguration": {
 		"Type": "AWS::AutoScaling::LaunchConfiguration",
 		"Properties": {
+			"AssociatePublicIpAddress": true,
 			"InstanceType": "t2.micro",
+			"KeyName": "daniil-keypair",
 			"ImageId": "ami-040cf9dcede9f064a",
 			"SecurityGroups": [{
 				"Ref": "SecurityGroupForBastion"

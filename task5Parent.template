@@ -1,0 +1,24 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "Parent VPC",
+
+  "Resources" : {
+    "vpcTemplate": {
+      "Fn::Transform": {
+        "Name": "AWS::Include",
+        "Parameters": {
+          "Location": "s3://{bucketName}/task5VPC.template"
+        }
+      }
+    },
+    "instancesTemplate": {
+      "Fn::Transform": {
+        "Name": "AWS::Include",
+        "Parameters": {
+          "Location": "s3://{bucketName}/task5Instances.template"
+        }
+      }
+    }
+  }
+}
